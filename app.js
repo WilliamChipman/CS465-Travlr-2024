@@ -13,6 +13,9 @@ var newsRouter = require("./app_server/routes/news");
 var mealsRouter = require("./app_server/routes/meals");
 var contactRouter = require("./app_server/routes/contact");
 var aboutRouter = require("./app_server/routes/about");
+var apiRouter = require("./app_api/routes/index");
+
+require("./app_api/models/db");
 
 var app = express();
 
@@ -36,6 +39,7 @@ app.use("/news", newsRouter);
 app.use("/meals", mealsRouter);
 app.use("/contact", contactRouter);
 app.use("/about", aboutRouter);
+app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
