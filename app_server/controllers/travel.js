@@ -24,7 +24,7 @@ const travel = async function (req, res, next) {
       }
       res.render("travel", { title: "Travlr Getaways", trips: json, message });
     })
-    .catch((err) => res.status(500).send(e.message));
+    .catch((err) => res.status(500).send(err.message));
 };
 
 module.exports = {
